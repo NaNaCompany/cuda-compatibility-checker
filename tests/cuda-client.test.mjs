@@ -41,7 +41,9 @@ test('CUDA client shows limited conditions, official links and safe hash selecti
     const profile=new Element({value:'cuda-11-8'}); profile.options=data.profiles.map(({id})=>({value:id}));
     const submit=new Element();submit.disabled=true;
     const root=fixture({ui,messages,dataURL:'../data.json'},{'#cuda-form':new Element(),'#profile':profile,'#os':new Element({value:'windows'}),'#driver-version':new Element({value:'999.99'}),'#installed-toolkit':new Element(),'#cuda-result':new Element(),'#driver-max-cuda':new Element(),'#parse-smi':new Element(),'#smi-output':new Element(),formButtons:[submit]});
+    root.elements['#status'].textContent=ui.loading;
     await initCuda(root); assert.equal(profile.value,'cuda-13-0');
+    assert.equal(root.elements['#status'].textContent,'');
     assert.equal(submit.disabled,false);
     root.elements['#cuda-form'].fire('submit'); let text=allText(root.elements['#cuda-result']);
     for(const expected of [messages.conditional,messages.baselineNotice,messages.layersNotice,messages.GPU_ARCHITECTURE_UNVERIFIED]) assert(text.includes(expected));

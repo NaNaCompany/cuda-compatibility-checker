@@ -80,6 +80,7 @@ export async function initCuda(root = document) {
   for (const button of root.querySelectorAll('#cuda-form button')) button.disabled = false;
   const parse = root.querySelector('#parse-smi');
   if (parse) parse.disabled = false;
+  if (status) status.textContent = '';
   root.documentElement.classList.add('app-ready');
 }
 
