@@ -1,0 +1,13 @@
+{
+  "slug": "cuda-compatibility-checker",
+  "type": "cuda",
+  "origin": "https://nanalab.kr/cuda-compatibility-checker",
+  "languages": [
+    "ko",
+    "en",
+    "es",
+    "zh",
+    "ja",
+    "de"
+  ]
+}

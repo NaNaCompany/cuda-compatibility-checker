@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "slug": "cuda-compatibility-checker",
+  "type": "cuda",
+  "languages": [
+    "ko",
+    "en",
+    "es",
+    "zh",
+    "ja",
+    "de"
+  ],
+  "entries": 8,
+  "pages": 54,
+  "internalLinksChecked": 1273,
+  "externalLinksObserved": 11,
+  "publisherPages": 54,
+  "origin": "https://nanalab.kr/cuda-compatibility-checker",
+  "binariesHosted": 0,
+  "sourceHosts": [
+    "developer.nvidia.com",
+    "discuss.pytorch.org",
+    "docs.nvidia.com",
+    "download.pytorch.org",
+    "pytorch.org"
+  ],
+  "sourceUrlsCheckedStatically": 15,
+  "httpReachabilityChecked": false,
+  "browserOrPhysicalExecutionChecked": false
+}

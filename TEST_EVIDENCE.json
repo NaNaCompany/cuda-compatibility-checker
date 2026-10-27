@@ -1,0 +1,10 @@
+{
+  "slug": "cuda-compatibility-checker",
+  "pass": true,
+  "testsPassed": 18,
+  "testsFailed": 0,
+  "source_sha256": "8ac4ed73d1e13d9d6f0b8daf719fb9ffff77202ab4618184e9da3d666fec14f2",
+  "dist_sha256": "a36981172ca3f33de5a1a299bfe82978a643383417632c7f42b540d78782c8d4",
+  "reproducibleBuild": true,
+  "browserOrPhysicalExecutionChecked": false
+}

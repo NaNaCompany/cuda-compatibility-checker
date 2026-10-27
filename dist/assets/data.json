@@ -1,0 +1,1609 @@
+{
+  "slug": "cuda-compatibility-checker",
+  "checkedAt": "2026-10-27",
+  "title": {
+    "ko": "CUDA·드라이버·PyTorch 조건 확인",
+    "en": "CUDA, driver and PyTorch requirements",
+    "es": "Requisitos de CUDA, controlador y PyTorch",
+    "zh": "CUDA、驱动和 PyTorch 条件检查",
+    "ja": "CUDA・ドライバー・PyTorch 条件確認",
+    "de": "CUDA-, Treiber- und PyTorch-Anforderungen"
+  },
+  "description": {
+    "ko": "프로필과 직접 입력한 드라이버를 비교합니다. GPU·Python·OS 세부 조건은 별도 확인이 필요합니다.",
+    "en": "Compare a selected profile with a manually entered driver. GPU, Python and OS details require separate checks.",
+    "es": "Compare un perfil con el controlador introducido. Compruebe por separado GPU, Python y detalles del sistema.",
+    "zh": "将所选配置与手动输入的驱动比较。GPU、Python 和操作系统细节需另行检查。",
+    "ja": "選択した構成と手入力のドライバーを比較します。GPU、Python、OS の詳細は別途確認が必要です。",
+    "de": "Vergleichen Sie ein Profil mit der manuell eingegebenen Treiberversion. GPU, Python und Betriebssystemdetails sind separat zu prüfen."
+  },
+  "profiles": [
+    {
+      "id": "cuda-11-8",
+      "kind": "toolkit",
+      "cuda": "11.8",
+      "label": {
+        "ko": "CUDA Toolkit 11.8",
+        "en": "CUDA Toolkit 11.8",
+        "es": "CUDA Toolkit 11.8",
+        "zh": "CUDA Toolkit 11.8",
+        "ja": "CUDA Toolkit 11.8",
+        "de": "CUDA Toolkit 11.8"
+      },
+      "minimumDriver": {
+        "linux": "450.80.02",
+        "windows": "452.39"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "installUrl": "https://developer.nvidia.com/cuda-toolkit-archive",
+      "installLinkKind": "official-toolkit-archive",
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 11.8 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/11.8.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 11.8 — 개발 도구 조건",
+          "summary": "CUDA 11.8의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 11.8 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 11.8. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 11.8 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 11.8. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 11.8 — 开发工具条件",
+          "summary": "比较 CUDA 11.8 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 11.8 — 開発ツールの条件",
+          "summary": "CUDA 11.8 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 11.8 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 11.8. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-12-1",
+      "kind": "toolkit",
+      "cuda": "12.1",
+      "label": {
+        "ko": "CUDA Toolkit 12.1",
+        "en": "CUDA Toolkit 12.1",
+        "es": "CUDA Toolkit 12.1",
+        "zh": "CUDA Toolkit 12.1",
+        "ja": "CUDA Toolkit 12.1",
+        "de": "CUDA Toolkit 12.1"
+      },
+      "minimumDriver": {
+        "linux": "525.60.13",
+        "windows": "527.41"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "installUrl": "https://developer.nvidia.com/cuda-toolkit-archive",
+      "installLinkKind": "official-toolkit-archive",
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 12.1 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.1.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 12.1 — 개발 도구 조건",
+          "summary": "CUDA 12.1의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 12.1 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 12.1. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 12.1 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 12.1. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 12.1 — 开发工具条件",
+          "summary": "比较 CUDA 12.1 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 12.1 — 開発ツールの条件",
+          "summary": "CUDA 12.1 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 12.1 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 12.1. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-12-4",
+      "kind": "toolkit",
+      "cuda": "12.4",
+      "label": {
+        "ko": "CUDA Toolkit 12.4",
+        "en": "CUDA Toolkit 12.4",
+        "es": "CUDA Toolkit 12.4",
+        "zh": "CUDA Toolkit 12.4",
+        "ja": "CUDA Toolkit 12.4",
+        "de": "CUDA Toolkit 12.4"
+      },
+      "minimumDriver": {
+        "linux": "525.60.13",
+        "windows": "528.33"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "installUrl": "https://developer.nvidia.com/cuda-toolkit-archive",
+      "installLinkKind": "official-toolkit-archive",
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 12.4 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.4.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 12.4 — 개발 도구 조건",
+          "summary": "CUDA 12.4의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 12.4 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 12.4. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 12.4 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 12.4. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 12.4 — 开发工具条件",
+          "summary": "比较 CUDA 12.4 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 12.4 — 開発ツールの条件",
+          "summary": "CUDA 12.4 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 12.4 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 12.4. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-13-0",
+      "kind": "toolkit",
+      "cuda": "13.0",
+      "label": {
+        "ko": "CUDA Toolkit 13.0",
+        "en": "CUDA Toolkit 13.0",
+        "es": "CUDA Toolkit 13.0",
+        "zh": "CUDA Toolkit 13.0",
+        "ja": "CUDA Toolkit 13.0",
+        "de": "CUDA Toolkit 13.0"
+      },
+      "minimumDriver": {
+        "linux": "580.65.06",
+        "windows": "580.88"
+      },
+      "minimumKind": "verified-release-baseline",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "installUrl": "https://developer.nvidia.com/cuda-toolkit-archive",
+      "installLinkKind": "official-toolkit-archive",
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 13.0 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        },
+        {
+          "label": "NVIDIA R580 release baseline",
+          "url": "https://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 13.0 — 개발 도구 조건",
+          "summary": "CUDA 13.0의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 13.0 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 13.0. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 13.0 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 13.0. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 13.0 — 开发工具条件",
+          "summary": "比较 CUDA 13.0 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 13.0 — 開発ツールの条件",
+          "summary": "CUDA 13.0 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 13.0 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 13.0. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu118",
+      "kind": "pytorch-wheel",
+      "cuda": "11.8",
+      "torch": "2.5.1",
+      "label": {
+        "ko": "PyTorch 2.5.1 / CUDA 11.8",
+        "en": "PyTorch 2.5.1 / CUDA 11.8",
+        "es": "PyTorch 2.5.1 / CUDA 11.8",
+        "zh": "PyTorch 2.5.1 / CUDA 11.8",
+        "ja": "PyTorch 2.5.1 / CUDA 11.8",
+        "de": "PyTorch 2.5.1 / CUDA 11.8"
+      },
+      "minimumDriver": {
+        "linux": "450.80.02",
+        "windows": "452.39"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "wheelListingVerified": true,
+      "pythonWheelVerified": false,
+      "gpuKernelsVerified": false,
+      "indexUrl": "https://download.pytorch.org/whl/cu118",
+      "installUrl": "https://pytorch.org/get-started/previous-versions/",
+      "installLinkKind": "official-pytorch-version-instructions",
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 11.8 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/11.8.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 11.8 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 11.8 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 11.8. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 11.8 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 11.8 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 11.8. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu121",
+      "kind": "pytorch-wheel",
+      "cuda": "12.1",
+      "torch": "2.5.1",
+      "label": {
+        "ko": "PyTorch 2.5.1 / CUDA 12.1",
+        "en": "PyTorch 2.5.1 / CUDA 12.1",
+        "es": "PyTorch 2.5.1 / CUDA 12.1",
+        "zh": "PyTorch 2.5.1 / CUDA 12.1",
+        "ja": "PyTorch 2.5.1 / CUDA 12.1",
+        "de": "PyTorch 2.5.1 / CUDA 12.1"
+      },
+      "minimumDriver": {
+        "linux": "525.60.13",
+        "windows": "527.41"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "wheelListingVerified": true,
+      "pythonWheelVerified": false,
+      "gpuKernelsVerified": false,
+      "indexUrl": "https://download.pytorch.org/whl/cu121",
+      "installUrl": "https://pytorch.org/get-started/previous-versions/",
+      "installLinkKind": "official-pytorch-version-instructions",
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 12.1 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.1.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 12.1 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 12.1 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 12.1. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 12.1 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 12.1 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 12.1. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu124",
+      "kind": "pytorch-wheel",
+      "cuda": "12.4",
+      "torch": "2.5.1",
+      "label": {
+        "ko": "PyTorch 2.5.1 / CUDA 12.4",
+        "en": "PyTorch 2.5.1 / CUDA 12.4",
+        "es": "PyTorch 2.5.1 / CUDA 12.4",
+        "zh": "PyTorch 2.5.1 / CUDA 12.4",
+        "ja": "PyTorch 2.5.1 / CUDA 12.4",
+        "de": "PyTorch 2.5.1 / CUDA 12.4"
+      },
+      "minimumDriver": {
+        "linux": "525.60.13",
+        "windows": "528.33"
+      },
+      "minimumKind": "minor-version-compatibility",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "wheelListingVerified": true,
+      "pythonWheelVerified": false,
+      "gpuKernelsVerified": false,
+      "indexUrl": "https://download.pytorch.org/whl/cu124",
+      "installUrl": "https://pytorch.org/get-started/previous-versions/",
+      "installLinkKind": "official-pytorch-version-instructions",
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 12.4 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.4.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 12.4 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 12.4 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 12.4. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 12.4 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 12.4 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 12.4. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-13-0-cu130",
+      "kind": "pytorch-wheel",
+      "cuda": "13.0",
+      "torch": "2.13.0",
+      "label": {
+        "ko": "PyTorch 2.13.0 / CUDA 13.0",
+        "en": "PyTorch 2.13.0 / CUDA 13.0",
+        "es": "PyTorch 2.13.0 / CUDA 13.0",
+        "zh": "PyTorch 2.13.0 / CUDA 13.0",
+        "ja": "PyTorch 2.13.0 / CUDA 13.0",
+        "de": "PyTorch 2.13.0 / CUDA 13.0"
+      },
+      "minimumDriver": {
+        "linux": "580.65.06",
+        "windows": "580.88"
+      },
+      "minimumKind": "verified-release-baseline",
+      "platformScope": [
+        "linux-x86_64",
+        "windows-x86_64"
+      ],
+      "wheelListingVerified": true,
+      "pythonWheelVerified": false,
+      "gpuKernelsVerified": false,
+      "indexUrl": "https://download.pytorch.org/whl/cu130",
+      "installUrl": "https://pytorch.org/get-started/previous-versions/",
+      "installLinkKind": "official-pytorch-version-instructions",
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.13.0",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 13.0 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        },
+        {
+          "label": "NVIDIA R580 release baseline",
+          "url": "https://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 공식 wheel 조합",
+          "summary": "PyTorch 2.13.0 / CUDA 13.0 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.13.0 / CUDA 13.0 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.13.0 / CUDA 13.0. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.13.0 / CUDA 13.0 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.13.0 / CUDA 13.0 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.13.0 / CUDA 13.0. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "cuda-11-8",
+      "slug": "cuda-11-8",
+      "code": "CUDA Toolkit 11.8",
+      "aliases": [
+        "11.8"
+      ],
+      "category": "toolkit",
+      "brand": "NVIDIA",
+      "models": [
+        "CUDA Toolkit 11.8; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 11.8 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/11.8.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 11.8 — 개발 도구 조건",
+          "summary": "CUDA 11.8의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 11.8 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 11.8. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 11.8 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 11.8. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 11.8 — 开发工具条件",
+          "summary": "比较 CUDA 11.8 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 11.8 — 開発ツールの条件",
+          "summary": "CUDA 11.8 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 11.8 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 11.8. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-12-1",
+      "slug": "cuda-12-1",
+      "code": "CUDA Toolkit 12.1",
+      "aliases": [
+        "12.1"
+      ],
+      "category": "toolkit",
+      "brand": "NVIDIA",
+      "models": [
+        "CUDA Toolkit 12.1; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 12.1 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.1.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 12.1 — 개발 도구 조건",
+          "summary": "CUDA 12.1의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 12.1 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 12.1. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 12.1 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 12.1. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 12.1 — 开发工具条件",
+          "summary": "比较 CUDA 12.1 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 12.1 — 開発ツールの条件",
+          "summary": "CUDA 12.1 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 12.1 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 12.1. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-12-4",
+      "slug": "cuda-12-4",
+      "code": "CUDA Toolkit 12.4",
+      "aliases": [
+        "12.4"
+      ],
+      "category": "toolkit",
+      "brand": "NVIDIA",
+      "models": [
+        "CUDA Toolkit 12.4; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 12.4 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.4.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 12.4 — 개발 도구 조건",
+          "summary": "CUDA 12.4의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 12.4 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 12.4. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 12.4 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 12.4. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 12.4 — 开发工具条件",
+          "summary": "比较 CUDA 12.4 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 12.4 — 開発ツールの条件",
+          "summary": "CUDA 12.4 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 12.4 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 12.4. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "cuda-13-0",
+      "slug": "cuda-13-0",
+      "code": "CUDA Toolkit 13.0",
+      "aliases": [
+        "13.0"
+      ],
+      "category": "toolkit",
+      "brand": "NVIDIA",
+      "models": [
+        "CUDA Toolkit 13.0; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "NVIDIA CUDA 13.0 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        },
+        {
+          "label": "NVIDIA R580 release baseline",
+          "url": "https://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "CUDA Toolkit 13.0 — 개발 도구 조건",
+          "summary": "CUDA 13.0의 드라이버 하한을 비교합니다. 컴파일러·GPU 지원은 확인하지 않습니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "CUDA Toolkit 13.0 — Development toolkit requirements",
+          "summary": "Compare the driver floor for CUDA 13.0. Compiler and GPU support are not checked.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "CUDA Toolkit 13.0 — Requisitos de las herramientas de desarrollo",
+          "summary": "Compare el umbral del controlador para CUDA 13.0. No se verifica el compilador ni la GPU.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "CUDA Toolkit 13.0 — 开发工具条件",
+          "summary": "比较 CUDA 13.0 的驱动版本下限。不检查编译器或 GPU 支持。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "CUDA Toolkit 13.0 — 開発ツールの条件",
+          "summary": "CUDA 13.0 のドライバー下限を比較します。コンパイラーや GPU の対応は確認しません。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "CUDA Toolkit 13.0 — Anforderungen der Entwicklungswerkzeuge",
+          "summary": "Vergleichen Sie die Treiberuntergrenze für CUDA 13.0. Compiler- und GPU-Unterstützung werden nicht geprüft.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu118",
+      "slug": "torch-2-5-1-cu118",
+      "code": "PyTorch 2.5.1 / CUDA 11.8",
+      "aliases": [
+        "cu118"
+      ],
+      "category": "pytorch-wheel",
+      "brand": "PyTorch",
+      "models": [
+        "PyTorch 2.5.1 / CUDA 11.8; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 11.8 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/11.8.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 11.8 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 11.8 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 11.8. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 11.8 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 11.8 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 11.8 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 11.8. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu121",
+      "slug": "torch-2-5-1-cu121",
+      "code": "PyTorch 2.5.1 / CUDA 12.1",
+      "aliases": [
+        "cu121"
+      ],
+      "category": "pytorch-wheel",
+      "brand": "PyTorch",
+      "models": [
+        "PyTorch 2.5.1 / CUDA 12.1; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 12.1 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.1.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 12.1 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 12.1 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 12.1. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 12.1 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 12.1 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 12.1 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 12.1. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-5-1-cu124",
+      "slug": "torch-2-5-1-cu124",
+      "code": "PyTorch 2.5.1 / CUDA 12.4",
+      "aliases": [
+        "cu124"
+      ],
+      "category": "pytorch-wheel",
+      "brand": "PyTorch",
+      "models": [
+        "PyTorch 2.5.1 / CUDA 12.4; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.5.1",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 12.4 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/12.4.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 공식 wheel 조합",
+          "summary": "PyTorch 2.5.1 / CUDA 12.4 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.5.1 / CUDA 12.4 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.5.1 / CUDA 12.4. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.5.1 / CUDA 12.4 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.5.1 / CUDA 12.4 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.5.1 / CUDA 12.4 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.5.1 / CUDA 12.4. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    },
+    {
+      "id": "torch-2-13-0-cu130",
+      "slug": "torch-2-13-0-cu130",
+      "code": "PyTorch 2.13.0 / CUDA 13.0",
+      "aliases": [
+        "cu130"
+      ],
+      "category": "pytorch-wheel",
+      "brand": "PyTorch",
+      "models": [
+        "PyTorch 2.13.0 / CUDA 13.0; Linux x86_64 / Windows x86_64; GPU support unverified"
+      ],
+      "sources": [
+        {
+          "label": "PyTorch previous versions: 2.13.0",
+          "url": "https://pytorch.org/get-started/previous-versions/"
+        },
+        {
+          "label": "NVIDIA CUDA 13.0 release notes",
+          "url": "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-toolkit-release-notes/index.html"
+        },
+        {
+          "label": "NVIDIA CUDA compatibility",
+          "url": "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html"
+        },
+        {
+          "label": "NVIDIA R580 release baseline",
+          "url": "https://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html"
+        }
+      ],
+      "text": {
+        "ko": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 공식 wheel 조합",
+          "summary": "PyTorch 2.13.0 / CUDA 13.0 wheel 조합이 공식 목록에 있습니다. 드라이버 하한만 비교합니다.",
+          "checks": [
+            "OS를 선택하고 NVIDIA 드라이버 버전을 직접 입력하세요.",
+            "GPU 모델과 OS 세부 버전을 공식 설치 문서에서 확인하세요.",
+            "Python 버전·CPU 아키텍처에 맞는 wheel 제공 여부를 확인하세요."
+          ],
+          "escalation": "표시된 공식 설치 페이지에서 GPU·OS·개발 환경 조건을 확인하세요.",
+          "scope": "드라이버 조건 통과만으로 전체 호환이나 실제 실행을 보장하지 않습니다."
+        },
+        "en": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Official wheel combination",
+          "summary": "The official list includes PyTorch 2.13.0 / CUDA 13.0 wheels. Only the driver floor is compared.",
+          "checks": [
+            "Select the OS and enter the NVIDIA driver version manually.",
+            "Check the GPU model and exact OS release in official installation documentation.",
+            "Check wheel availability for the Python version and CPU architecture."
+          ],
+          "escalation": "Use the linked official installation page to review GPU, OS and development environment requirements.",
+          "scope": "Meeting the driver condition does not establish full compatibility or successful execution."
+        },
+        "es": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Combinación de wheel oficial",
+          "summary": "La lista oficial incluye wheels de PyTorch 2.13.0 / CUDA 13.0. Solo se compara el umbral del controlador.",
+          "checks": [
+            "Seleccione el sistema e introduzca la versión del controlador NVIDIA.",
+            "Compruebe el modelo de GPU y la versión exacta del sistema en la documentación oficial.",
+            "Compruebe que exista un wheel para su versión de Python y arquitectura de CPU."
+          ],
+          "escalation": "Revise los requisitos de GPU, sistema y entorno de desarrollo en la página oficial enlazada.",
+          "scope": "Cumplir el requisito del controlador no confirma compatibilidad total ni ejecución correcta."
+        },
+        "zh": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 官方 wheel 组合",
+          "summary": "官方列表提供 PyTorch 2.13.0 / CUDA 13.0 wheel 组合。仅比较驱动版本下限。",
+          "checks": [
+            "选择操作系统并手动输入 NVIDIA 驱动版本。",
+            "在官方安装文档中核对 GPU 型号和操作系统具体版本。",
+            "核对对应 Python 版本和 CPU 架构是否有 wheel。"
+          ],
+          "escalation": "通过所链接的官方安装页面检查 GPU、操作系统和开发环境要求。",
+          "scope": "满足驱动条件不代表完全兼容或已经成功运行。"
+        },
+        "ja": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — 公式 wheel の組み合わせ",
+          "summary": "公式一覧に PyTorch 2.13.0 / CUDA 13.0 の wheel があります。ドライバー下限だけを比較します。",
+          "checks": [
+            "OS を選び、NVIDIA ドライバーのバージョンを手入力してください。",
+            "公式インストール文書で GPU 型番と OS の詳細バージョンを確認してください。",
+            "Python バージョンと CPU アーキテクチャに対応する wheel を確認してください。"
+          ],
+          "escalation": "リンク先の公式ページで GPU・OS・開発環境の条件を確認してください。",
+          "scope": "ドライバー条件を満たしても、完全な互換性や実行成功は保証されません。"
+        },
+        "de": {
+          "title": "PyTorch 2.13.0 / CUDA 13.0 — Offizielle Wheel-Kombination",
+          "summary": "Die offizielle Liste enthält Wheels für PyTorch 2.13.0 / CUDA 13.0. Nur die Treiberuntergrenze wird verglichen.",
+          "checks": [
+            "Wählen Sie das Betriebssystem und geben Sie die NVIDIA-Treiberversion manuell ein.",
+            "Prüfen Sie GPU-Modell und genaue Betriebssystemversion in der offiziellen Installationsanleitung.",
+            "Prüfen Sie die Wheel-Verfügbarkeit für Ihre Python-Version und CPU-Architektur."
+          ],
+          "escalation": "Prüfen Sie GPU-, Betriebssystem- und Entwicklungsanforderungen über die verlinkte offizielle Installationsseite.",
+          "scope": "Eine erfüllte Treiberanforderung belegt weder vollständige Kompatibilität noch erfolgreiche Ausführung."
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "label": "nvidia-smi fields",
+      "url": "https://docs.nvidia.com/deploy/nvidia-smi/index.html"
+    },
+    {
+      "label": "macOS CUDA support ends at 10.2",
+      "url": "https://docs.nvidia.com/cuda/archive/10.2/cuda-toolkit-release-notes/index.html"
+    },
+    {
+      "label": "PyTorch binary runtime and local toolkit",
+      "url": "https://discuss.pytorch.org/t/is-it-required-to-set-up-cuda-on-pc-before-installing-cuda-enabled-pytorch/60181"
+    }
+  ],
+  "policy": {
+    "automaticDriverRead": false,
+    "commandsGenerated": false,
+    "fullCompatibilityClaim": false,
+    "forwardCompatibilityPackagesEvaluated": false,
+    "physicalExecutionVerified": false
+  }
+}
